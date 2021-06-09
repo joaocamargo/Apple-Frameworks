@@ -13,15 +13,22 @@ struct FrameworkGridView: View {
     
     var items = MockData.frameworks
     
+    @StateObject var viewModel = FrameworkGridViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(items) { element in
-                        FrameworkTitleView(framework: element)
+                        FrameworkTitleView(framework: element).onTapGesture {
+                            viewModel.selectedFramework = element
+                        }
                     }
                 }
             }.navigationBarTitle("🍎 Frameworks").padding()
+            .sheet(isPresented: $viewModel.isShowingDetailView){
+                DetailView(framework: viewModel.selectedFramework!, isShowingDetailView: $viewModel.isShowingDetailView)
+            }
         }
     }
     
