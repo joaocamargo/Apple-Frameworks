@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     
-    let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()),  GridItem(.flexible())]
     
     var items = MockData.frameworks
     
@@ -18,7 +17,7 @@ struct FrameworkGridView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: viewModel.columns) {
                     ForEach(items) { element in
                         FrameworkTitleView(framework: element).onTapGesture {
                             viewModel.selectedFramework = element
@@ -42,13 +41,3 @@ struct FrameworkGridView_Previews: PreviewProvider {
 }
 
 
-struct FrameworkTitleView: View {
-    let framework: Framework
-    
-    var body: some View {
-        VStack{
-            Image(framework.imageName).resizable().frame(width: 90, height: 90, alignment: .center)
-            Text(framework.name).font(.title2).fontWeight(.semibold).scaledToFit().minimumScaleFactor(0.5)
-        }.padding()
-    }
-}
