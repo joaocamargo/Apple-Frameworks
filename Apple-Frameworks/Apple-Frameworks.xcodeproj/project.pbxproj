@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05216977266F15B4008A8731 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05216976266F15B4008A8731 /* Framework.swift */; };
 		05216979266F2184008A8731 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05216978266F2184008A8731 /* DetailView.swift */; };
+		0557E7622677AAE600F9202E /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557E7612677AAE600F9202E /* FrameworkDetailViewModel.swift */; };
 		058E49F2266E41F500AD0B2B /* Apple_FrameworksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E49F1266E41F500AD0B2B /* Apple_FrameworksApp.swift */; };
 		058E49F4266E41F500AD0B2B /* FrameworkGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E49F3266E41F500AD0B2B /* FrameworkGridView.swift */; };
 		058E49F6266E41F800AD0B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058E49F5266E41F800AD0B2B /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		05216976266F15B4008A8731 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		05216978266F2184008A8731 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0557E7612677AAE600F9202E /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
 		058E49EE266E41F500AD0B2B /* Apple-Frameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple-Frameworks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		058E49F1266E41F500AD0B2B /* Apple_FrameworksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_FrameworksApp.swift; sourceTree = "<group>"; };
 		058E49F3266E41F500AD0B2B /* FrameworkGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkGridView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				05216978266F2184008A8731 /* DetailView.swift */,
+				0557E7612677AAE600F9202E /* FrameworkDetailViewModel.swift */,
 			);
 			path = FrameworkDetailView;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0557E7622677AAE600F9202E /* FrameworkDetailViewModel.swift in Sources */,
 				058E49F4266E41F500AD0B2B /* FrameworkGridView.swift in Sources */,
 				05216979266F2184008A8731 /* DetailView.swift in Sources */,
 				0595F86D2670714D00CDF78E /* XDismissButton.swift in Sources */,

@@ -13,32 +13,36 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
 
     
-    let framework: Framework
-    @Binding var isShowingDetailView: Bool
-    @State private var isShowingSafariView = false
+    @ObservedObject var viewModel: FrameworkDetailViewModel
+
     
     var body: some View {
         VStack {
             
-            XDismissButton(isShowingDetailView: $isShowingDetailView)
+            XDismissButton(isShowingDetailView: $viewModel.isShowingDetailView.wrappedValue)
 
             
             Spacer()
-            FrameworkDetailView(framework: framework)
+            FrameworkDetailView(framework: viewModel.framework)
             Spacer()
-           
-            Button{
-                isShowingSafariView = true
-            }
-            label: {
+            
+            Link(destination: URL(string: viewModel.framework.urlString) ?? URL(string: "www.apple.com")!) {
                 AFButton(text: "Learn More")
             }
             
-            Spacer()
+           
+//            Button{
+//                viewModel.isShowingSafariView = true
+//            }
+//            label: {
+//                AFButton(text: "Learn More")
+//            }
             
-        }.fullScreenCover(isPresented: $isShowingSafariView, content: {
-            SafariView(url: URL(string: framework.urlString) ?? URL(string: "")!)
-        })
+            Spacer()
+        }
+//        }.fullScreenCover(isPresented: $viewModel.isShowingSafariView, content: {
+//            SafariView(url: URL(string: viewModel.framework.urlString) ?? URL(string: "")!)
+//        })
         
     }
 }
@@ -47,7 +51,7 @@ struct DetailView_Previews: PreviewProvider {
     
        
     static var previews: some View {
-        DetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
+        DetailView(viewModel: FrameworkDetailViewModel(framework: MockData.sampleFramework, isShowingDetailView: .constant(false)))
             .preferredColorScheme(.dark)
     }
 }
